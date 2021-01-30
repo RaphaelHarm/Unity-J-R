@@ -57,7 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\FreeMoveCamManager.cs" />
-    <Compile Include="Assets\Scripts\Movment.cs" />
+    <Compile Include="Assets\Scripts\Plattform.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
