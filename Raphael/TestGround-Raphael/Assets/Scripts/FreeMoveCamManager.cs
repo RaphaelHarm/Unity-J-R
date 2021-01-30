@@ -7,7 +7,7 @@ public class FreeMoveCamManager : MonoBehaviour
 {
     public CinemachineFreeLook cam;
 
-    private int scrollCount = 10;
+    private int scrollCount = 5;
 
     public CinemachineFreeLook.Orbit[] orbits;
 
