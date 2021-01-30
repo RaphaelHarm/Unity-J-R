@@ -646,7 +646,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 1417019522}
-  orbitMultiplier: 1
+  orbits: []
 --- !u!143 &399233431
 CharacterController:
   m_ObjectHideFlags: 0
@@ -1088,7 +1088,7 @@ GameObject:
   - component: {fileID: 1207546123}
   m_Layer: 0
   m_Name: PlayerBody
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1169,7 +1169,7 @@ GameObject:
   - component: {fileID: 1417019521}
   m_Layer: 0
   m_Name: CM-Camera
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1295,7 +1295,7 @@ MonoBehaviour:
   m_SplineCurvature: 0.2
   m_Orbits:
   - m_Height: 14
-    m_Radius: 1
+    m_Radius: 5
   - m_Height: 5
     m_Radius: 18
   - m_Height: -2.3
@@ -1419,7 +1419,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1553771792}
-  m_LocalRotation: {x: 0.13505942, y: 8.719026e-16, z: -1.7869098e-17, w: 0.9908375}
+  m_LocalRotation: {x: 0.1350594, y: -0.00000001476463, z: 0.0000000020125421, w: 0.9908375}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:

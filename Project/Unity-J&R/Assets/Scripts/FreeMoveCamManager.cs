@@ -6,38 +6,43 @@ using Cinemachine;
 public class FreeMoveCamManager : MonoBehaviour
 {
     public CinemachineFreeLook cam;
-    public float orbitMultiplier = 1;
 
-    private List<float> heights;
+    private int scrollCount = 10;
 
-    private void Start()
+    public CinemachineFreeLook.Orbit[] orbits;
+
+    void Start()
     {
-        heights = new List<float>()
+        orbits = new CinemachineFreeLook.Orbit[3];
+        for (int i = 0; i < 3; i++)
         {
-            cam.m_Orbits[0].m_Height,
-            cam.m_Orbits[0].m_Height,
-            cam.m_Orbits[0].m_Height
-        };
+            orbits[i].m_Height = cam.m_Orbits[i].m_Height;
+            orbits[i].m_Radius = cam.m_Orbits[i].m_Radius;
+        }
     }
 
-    // Update is called once per frame
     void Update()
     {
-        orbitMultiplier = Input.mouseScrollDelta.y;
-
-        /*
-        if (Input.mouseScrollDelta.y > 0)
+        if (Input.mouseScrollDelta.y > 0 && scrollCount > 0)
         {
-            orbitMultiplier = 
+            cam.m_Orbits[0].m_Height -= orbits[0].m_Height / 10;
+            cam.m_Orbits[0].m_Radius -= orbits[0].m_Radius / 10;
+            cam.m_Orbits[1].m_Height -= orbits[1].m_Height / 10;
+            cam.m_Orbits[1].m_Radius -= orbits[1].m_Radius / 10;
+            cam.m_Orbits[2].m_Height -= orbits[2].m_Height / 10;
+            cam.m_Orbits[2].m_Radius -= orbits[2].m_Radius / 10;
+            scrollCount--;
         }
-        cam.m_Orbits[0].m_Height += orbitMultiplier / 10;
-        cam.m_Orbits[0].m_Radius += orbitMultiplier;
-        cam.m_Orbits[1].m_Height += orbitMultiplier / 10;
-        cam.m_Orbits[1].m_Radius += orbitMultiplier;
-        cam.m_Orbits[2].m_Height += orbitMultiplier / 10;
-        cam.m_Orbits[2].m_Radius += orbitMultiplier;
-        */
-
-        orbitMultiplier = 0;
+        else if (Input.mouseScrollDelta.y < 0 && scrollCount < 10)
+        {
+            cam.m_Orbits[0].m_Height += orbits[0].m_Height / 10;
+            cam.m_Orbits[0].m_Radius += orbits[0].m_Radius / 10;
+            cam.m_Orbits[1].m_Height += orbits[1].m_Height / 10;
+            cam.m_Orbits[1].m_Radius += orbits[1].m_Radius / 10;
+            cam.m_Orbits[2].m_Height += orbits[2].m_Height / 10;
+            cam.m_Orbits[2].m_Radius += orbits[2].m_Radius / 10;
+            scrollCount++;
+        }
+        print(scrollCount);
     }
 }
